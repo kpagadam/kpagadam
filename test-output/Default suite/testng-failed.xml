@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.realEst.project.tests.userLogin">
+      <class name="com.realEst.project.tests.addNewProperty">
         <methods>
-          <include name="validUserLogin"/>
           <include name="setUpBeforeClass"/>
+          <include name="addingNewProperty"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.realEst.project.tests.userLogin -->
+      </class> <!-- com.realEst.project.tests.addNewProperty -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

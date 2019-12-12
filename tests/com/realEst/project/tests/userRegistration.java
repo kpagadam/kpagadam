@@ -40,20 +40,22 @@ public class userRegistration {
 		driver.get(baseUrl);
 	}
 	
-//	@AfterMethod
-//	public void tearDown() throws Exception {
-//		Thread.sleep(1000);
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void tearDown() throws Exception {
+		Thread.sleep(1000);
+		driver.quit();
+	}
 	@Test
 	public void validUsrRegistration() {
 		userRegistration.clickOnlogInAndRegBtn();
 		userRegistration.clickOnRegisterBtn();
-		userRegistration.enterEmailID("Anil00060@gmail.com");
-		userRegistration.enterFirstName("Anil");
-		userRegistration.enterlastName("kumar");
-		screenShot.captureScreenShot("details");
-		userRegistration.clickOnSubBtn();		
-		screenShot.captureScreenShot("After");
+		userRegistration.enterEmailID("revasharma23@gmail.com");
+	    userRegistration.enterFirstName("reva");
+		userRegistration.enterlastName("sharma");
+		screenShot.captureScreenShot("details are captured");
+		userRegistration.clickOnSubBtn();
+		System.out.println("Registration-successful");	
+		screenShot.captureScreenShot("RETC_01 Test case is completed for Registration-successful");
+		
 	}
 }

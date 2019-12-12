@@ -3,26 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.realEst.project.tests.userRegistration">
+      <class name="com.realEst.project.tests.logInAndUpdateProfile">
         <methods>
           <include name="setUpBeforeClass"/>
-          <include name="setUp"/>
-          <include name="validUsrRegistration"/>
-        </methods>
-      </class> <!-- com.realEst.project.tests.userRegistration -->
-      <class name="com.realEst.project.tests.updateProfile">
-        <methods>
-          <include name="updateUserprofile"/>
+          <include name="loginAndUpdateprofile"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.realEst.project.tests.updateProfile -->
-      <class name="com.realEst.project.tests.userLogin">
-        <methods>
-          <include name="validUserLogin"/>
-          <include name="setUpBeforeClass"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.realEst.project.tests.userLogin -->
+      </class> <!-- com.realEst.project.tests.logInAndUpdateProfile -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

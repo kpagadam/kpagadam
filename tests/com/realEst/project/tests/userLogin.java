@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -16,43 +17,45 @@ import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
 public class userLogin {
-
-	private WebDriver driver;
+		
+	private static WebDriver driver;
 	private String baseUrl;
-	private RegistrationAndLoginPOM userLogin;
+	public static  RegistrationAndLoginPOM userlogin;
 	private static Properties properties;
-	private ScreenShot screenShot;
+	private static ScreenShot screenShot;
 
-	@BeforeClass
+	//@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 	}
 
-	@BeforeMethod
+	
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		userLogin = new RegistrationAndLoginPOM(driver); 
+		userlogin = new RegistrationAndLoginPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 	}
-	
-//	@AfterMethod
-//	public void tearDown() throws Exception {
-//		Thread.sleep(1000);
-//		driver.quit();
-//	}
-	@Test
-	public void validUserLogin() {
 		
-		userLogin.clickOnlogInAndRegBtn();		
-		userLogin.clickOnlogInBtn();
-		userLogin.sendusername("admin");
-		userLogin.sendPassword("admin@123");
-		userLogin.clickLoginBtn();
-	    screenShot.captureScreenShot("success");
+	//@AfterMethod
+		public void tearDown() throws Exception {
+		Thread.sleep(1000);
+			driver.quit();
+		}	
+	
+	
+	public static void validUserLogin() {
+//		driver = DriverFactory.getDriver(DriverNames.CHROME);
+//		userlogin = new RegistrationAndLoginPOM(driver); 
+		userlogin.clickOnlogInAndRegBtn();		
+		userlogin.clickOnlogInBtn();
+		userlogin.sendusername("admin");
+		userlogin.sendPassword("admin@123");
+		userlogin.clickLoginBtn();
+	    screenShot.captureScreenShot("Login is success");
 	}
 }
